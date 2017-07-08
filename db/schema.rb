@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170708034956) do
+ActiveRecord::Schema.define(version: 20170708040224) do
 
   create_table "abbreviations", force: :cascade do |t|
     t.string   "name"
@@ -30,6 +30,15 @@ ActiveRecord::Schema.define(version: 20170708034956) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "meanings", force: :cascade do |t|
+    t.string   "itself"
+    t.string   "example"
+    t.integer  "word_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["word_id"], name: "index_meanings_on_word_id"
   end
 
   create_table "singular_genitives", force: :cascade do |t|

@@ -17,4 +17,6 @@ class Word < ApplicationRecord
 
   belongs_to :singular_genitive
   belongs_to :gender
+
+  has_many :meanings
 end
