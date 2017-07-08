@@ -10,5 +10,8 @@
 
 class Abbreviature < ApplicationRecord
 	validates :explanation, presence: true
+
 	has_many :abbreviations
+
+	has_and_belongs_to_many :meanings
 end
