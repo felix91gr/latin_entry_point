@@ -1,0 +1,23 @@
+# == Schema Information
+#
+# Table name: words
+#
+#  id                   :integer          not null, primary key
+#  name                 :string
+#  singular_genitive_id :integer
+#  gender_id            :integer
+#  created_at           :datetime         not null
+#  updated_at           :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  singular_genitive: one
+  gender: one
+
+two:
+  name: MyString
+  singular_genitive: two
+  gender: two

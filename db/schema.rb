@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170708002739) do
+ActiveRecord::Schema.define(version: 20170708034956) do
 
   create_table "abbreviations", force: :cascade do |t|
     t.string   "name"
@@ -36,6 +36,16 @@ ActiveRecord::Schema.define(version: 20170708002739) do
     t.string   "genitive"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "words", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "singular_genitive_id"
+    t.integer  "gender_id"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.index ["gender_id"], name: "index_words_on_gender_id"
+    t.index ["singular_genitive_id"], name: "index_words_on_singular_genitive_id"
   end
 
 end

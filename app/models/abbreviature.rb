@@ -10,5 +10,5 @@
 
 class Abbreviature < ApplicationRecord
 	validates :explanation, presence: true
-	has_many :abbreviation
+	has_many :abbreviations
 end

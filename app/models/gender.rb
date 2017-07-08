@@ -10,4 +10,5 @@
 
 class Gender < ApplicationRecord
 	validates :name, presence: true
+	has_many :words
 end

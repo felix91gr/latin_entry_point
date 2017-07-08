@@ -10,4 +10,5 @@
 
 class SingularGenitive < ApplicationRecord
 	validates :genitive, presence: true
+	has_many :words
 end
