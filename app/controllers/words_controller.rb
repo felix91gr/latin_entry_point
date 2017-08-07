@@ -14,6 +14,10 @@ class WordsController < ApplicationController
   end
 
   def create
+  	puts('Writing parameters for debugging')
+  	require 'pp'
+  	pp params[:word][:meanings_attributes]
+  	puts('Finished Writing parameters for debugging')
   	@word = Word.new(word_params)
   	respond_to do |format|
   	  if @word.save
@@ -34,6 +38,7 @@ class WordsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def word_params
-      params.require(:word).permit(:name, :singular_genitive_id, :gender_id, meanings_attributes: [:id, :abbreviatures, :itself, :example, :_destroy])
+      params.require(:word).permit(:name, :singular_genitive_id, :gender_id, meanings_attributes: [:id, :itself, :example, :_destroy, abbreviature_ids: []])
+      # params.require(:word).permit(:meanings_attributes).permit(abbreviature_ids: [])
     end
 end

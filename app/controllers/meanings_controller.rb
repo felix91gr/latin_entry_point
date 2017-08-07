@@ -7,6 +7,7 @@ class MeaningsController < ApplicationController
 
   def create
     @meaning = Meaning.new(meaning_params)
+    # @meaning.abbreviature_ids=meaning_params[:abbreviature_ids]
     @meaning.save
   end
 
@@ -30,6 +31,6 @@ class MeaningsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def meaning_params
-      params.require(:meaning).permit(:abbreviatures, :itself, :example, :word_id)
+      params.require(:meaning).permit(:abbreviature_ids, :itself, :example, :word_id)
     end
 end
