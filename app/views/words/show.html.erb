@@ -1,16 +1,23 @@
-<h1>Word</h1>
+<h1><%= @word.name.capitalize %> </h1>
 
-<p><strong>Name:</strong> <%= @word.name %> </p>
+<p><strong>Genitivo singular:</strong> <%= @word.singular_genitive.genitive %> </p>
 
-<p><strong>Singular Genitive:</strong> <%= @word.singular_genitive.genitive %> </p>
+<p><strong>Género:</strong> <%= @word.gender.name %> </p>
 
-<p><strong>Gender:</strong> <%= @word.gender.name %> </p>
-
-<h2>Meanings</h2>
+<h2>Acepciones</h2>
 
 <% for meaning in @word.meanings %>
 
-  <p><%= meaning.abbreviatures.pluck(:explanation) %></p>
-  <p><%= meaning.itself %>. <i><%= meaning.example %></i></p>
+  <p>
+	<i>
+	<small>
+  	  <% for abbrvr in meaning.abbreviatures %>
+  	  	<%= abbrvr.abbreviations.first.name %>,  
+  	  <% end %>		
+  	</small>
+  	</i>
+
+  	<%= meaning.itself.capitalize %>. <i><%= meaning.example %></i>
+  </p>
 
 <% end %>

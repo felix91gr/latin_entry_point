@@ -126,8 +126,8 @@ Abbreviation.create(name: "enclít", abbreviature: abbr_enclítica)
 abbr_epíteto = Abbreviature.create(explanation: "epíteto")
 Abbreviation.create(name: "epít", abbreviature: abbr_epíteto)
 
-abbr_epecialmente = Abbreviature.create(explanation: "epecialmente")
-Abbreviation.create(name: "esp", abbreviature: abbr_epecialmente)
+abbr_especialmente = Abbreviature.create(explanation: "especialmente")
+Abbreviation.create(name: "esp", abbreviature: abbr_especialmente)
 
 abbr_exclamación_o_exclamativo = Abbreviature.create(explanation: "exclamación o exclamativo")
 Abbreviation.create(name: "excl", abbreviature: abbr_exclamación_o_exclamativo)
