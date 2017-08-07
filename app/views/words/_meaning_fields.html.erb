@@ -1,5 +1,9 @@
   <div class='nested-fields'>
     <div class="field">
+      <%= f.label :abreviaciones %>
+      <%= f.collection_select :abbreviature_ids, Abbreviature.all, :id, :explanation, { prompt: 'Select abbreviatures'}, {:multiple => true} %>
+    </div>
+    <div class="field">
       <%= f.label :significado %>
       <%= f.text_field :itself %>
     </div>

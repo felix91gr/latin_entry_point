@@ -10,6 +10,7 @@
 
 <% for meaning in @word.meanings %>
 
+  <p><%= meaning.abbreviatures.pluck(:explanation) %></p>
   <p><%= meaning.itself %>. <i><%= meaning.example %></i></p>
 
 <% end %>

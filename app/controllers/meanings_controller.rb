@@ -30,10 +30,6 @@ class MeaningsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def meaning_params
-      params.require(:meaning).permit(:itself, :example, :word_id)
-    end
-
-    def bet_option_params
-      params.require(:bet_option).permit(:description, :bet_id)
+      params.require(:meaning).permit(:abbreviatures, :itself, :example, :word_id)
     end
 end
