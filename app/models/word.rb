@@ -18,5 +18,8 @@ class Word < ApplicationRecord
   belongs_to :singular_genitive
   belongs_to :gender
 
-  has_many :meanings
+  has_many :meanings, inverse_of: :word
+  accepts_nested_attributes_for :meanings, 
+  								:reject_if => :all_blank,
+  								:allow_destroy => true
 end

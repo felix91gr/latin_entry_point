@@ -1,0 +1,15 @@
+<h1>Word</h1>
+
+<p><strong>Name:</strong> <%= @word.name %> </p>
+
+<p><strong>Singular Genitive:</strong> <%= @word.singular_genitive.genitive %> </p>
+
+<p><strong>Gender:</strong> <%= @word.gender.name %> </p>
+
+<h2>Meanings</h2>
+
+<% for meaning in @word.meanings %>
+
+  <p><%= meaning.itself %>. <i><%= meaning.example %></i></p>
+
+<% end %>

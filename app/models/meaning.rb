@@ -12,9 +12,9 @@
 
 class Meaning < ApplicationRecord
   validates :itself, presence: true
-  validates :word_id, presence: true
 
   belongs_to :word
 
   has_and_belongs_to_many :abbreviatures
+
 end
