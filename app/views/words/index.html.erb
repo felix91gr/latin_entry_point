@@ -1,0 +1,11 @@
+<h1>Codex Latinus</h1>
+
+<h2>Palabras en el diccionario</h2>
+
+<ul>
+	<% for word in @words.all %>
+		<li><%= link_to word.name, word_path(word) %></li>
+	<% end %>
+</ul>
+
+<li><%= link_to 'Agregar una palabra al diccionario', new_word_path %></li>

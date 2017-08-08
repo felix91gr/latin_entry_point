@@ -1,29 +1,30 @@
 <%= form_for @word do |w| %>
 
   <div class="field">
-    <%= w.label :name %>
+    <%= w.label :palabra %>
     <br/>
     <%= w.text_field :name %>
   </div>
   <div class="field">
-    <%= w.label :singular_genitive %>
+    <%= w.label :genitivo_singular %>
     <br/>
-    <%= w.collection_select :singular_genitive_id, SingularGenitive.all, :id, :genitive, { prompt: 'Select singular genitive'} %>
+    <%= w.collection_select :singular_genitive_id, SingularGenitive.all, :id, :genitive %>
   </div>
   <div class="field">
-    <%= w.label :gender %>
+    <%= w.label "Género" %>
     <br/>
-	<%= w.collection_select :gender_id, Gender.all, :id, :name, { prompt: 'Select gender' }%>    
+	<%= w.collection_select :gender_id, Gender.all, :id, :name %>    
   </div>
 
-  <h3>Meanings</h3>
+  <h3>Acepciones</h3>
   <div id='meanings'>
     <%= w.fields_for :meanings do |meaning| %>
       <%= render 'meaning_fields', f: meaning %>
     <% end %>
     <div class='links'>
-      <%= link_to_add_association 'add meaning', w, :meanings %>
+      <%= link_to_add_association 'Añadir', w, :meanings %>
     </div>
   </div>
-  <%= w.submit 'Save' %>
+  <br/>
+  <%= w.submit 'Guardar' %>
 <% end %>
